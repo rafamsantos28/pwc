@@ -1,24 +1,74 @@
-/* Definições de Tipografia Globais */
+/* ==========================================================================
+   1. CORES BASE DA MARCA & TIPOGRAFIA
+   ========================================================================== */
+:root {
+    --bg-main: #040108;
+    --bg-feature: rgba(12, 5, 26, 0.4);
+    --bg-card: #0c051a;
+    --border-dark: rgba(59, 7, 100, 0.3);
+    --cyan-neon: #22d3ee;
+    --fuchsia-neon: #d946ef;
+    --rose-neon: #e11d48;
+    --amber-neon: #f59e0b;
+    --purple-badge: #3b0764;
+    --text-muted: rgba(216, 180, 254, 0.7);
+}
+
 body {
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
 }
 
-.font-logo {
-    font-family: 'Montserrat', sans-serif;
+.bg-main-dark { background-color: var(--bg-main) !important; }
+.bg-feature-dark { background-color: var(--bg-feature) !important; }
+.bg-footer-dark { background-color: rgba(0, 0, 0, 0.4) !important; }
+
+.font-logo { font-family: 'Montserrat', sans-serif; }
+.text-cyan { color: var(--cyan-neon) !important; }
+.text-fuchsia { color: var(--fuchsia-neon) !important; }
+.text-purple-muted { color: var(--text-muted) !important; }
+.text-muted-footer { color: rgba(192, 132, 252, 0.4) !important; }
+
+.bg-cyan { background-color: var(--cyan-neon) !important; }
+.bg-fuchsia { background-color: var(--fuchsia-neon) !important; }
+.bg-rose { background-color: var(--rose-neon) !important; }
+.bg-amber { background-color: var(--amber-neon) !important; }
+.bg-purple-badge { background-color: var(--purple-badge) !important; }
+
+/* Elementos de Divisão do Layout */
+.border-b-dark { border-bottom: 1px solid var(--border-dark); }
+.border-t-dark { border-top: 1px solid var(--border-dark); }
+.border-cyan-dim { border-color: rgba(34, 211, 238, 0.3) !important; }
+
+/* ==========================================================================
+   2. NAVBAR & HERO SPECIAL EFFECTS
+   ========================================================================== */
+.custom-navbar {
+    background-color: rgba(4, 1, 8, 0.9) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-/* Estilização Manual de Inputs e Botões do Bootstrap */
-.form-control:focus {
-    background-color: rgba(0, 0, 0, 0.7) !important;
-    border-color: #22d3ee !important;
-    box-shadow: 0 0 0 0.25rem rgba(34, 211, 238, 0.15) !important;
-    color: #fff !important;
+.hero-section {
+    min-height: 75vh;
+    background: radial-gradient(circle at top right, rgba(59, 7, 100, 0.2), transparent 60%);
 }
 
+.text-gradient {
+    background-image: linear-gradient(to right, var(--fuchsia-neon), var(--cyan-neon));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.max-width-hero { max-width: 540px; }
+
+/* ==========================================================================
+   3. BOTÕES PERSONALIZADOS
+   ========================================================================== */
 .btn-cyan {
-    background-color: #22d3ee;
-    border-color: #22d3ee;
+    background-color: var(--cyan-neon);
+    border-color: var(--cyan-neon);
     color: #000;
     transition: all 0.3s ease;
 }
@@ -27,19 +77,32 @@ body {
     background-color: #06b6d4;
     border-color: #06b6d4;
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
 }
 
 .btn-outline-purple {
-    border-color: #4c1d95;
+    border-color: var(--purple-badge);
     background-color: rgba(76, 29, 149, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .btn-outline-purple:hover {
-    border-color: #22d3ee;
+    border-color: var(--cyan-neon);
     background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
-/* Efeitos Visuais das Boxes de Vantagens */
+/* ==========================================================================
+   4. CARDS DE VANTAGENS
+   ========================================================================== */
+.custom-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(59, 7, 100, 0.4);
+    transition: all 0.3s ease;
+}
+
 .hover-border-cyan:hover {
     border-color: rgba(33, 211, 238, 0.5) !important;
     transform: translateY(-4px);
@@ -52,11 +115,9 @@ body {
     box-shadow: 0 10px 30px rgba(217, 70, 239, 0.05);
 }
 
-article {
-    transition: all 0.3s ease;
-}
-
-/* Efeitos adicionais para o Catálogo de Filmes */
+/* ==========================================================================
+   5. CATÁLOGO DE FILMES (HOVERS & OVERLAYS)
+   ========================================================================== */
 .movie-card img {
     transition: transform 0.5s ease;
     width: 100%;
@@ -65,10 +126,9 @@ article {
 }
 
 .movie-card:hover img {
-    transform: scale(1.08); /* Efeito de Zoom suave */
+    transform: scale(1.08);
 }
 
-/* Máscara gradiente escura por cima da foto para dar leitura ao texto branco */
 .card-overlay {
     background: linear-gradient(to top, rgba(4, 1, 8, 0.95) 0%, rgba(4, 1, 8, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
     opacity: 0.9;
@@ -79,90 +139,35 @@ article {
     opacity: 1;
 }
 
-/* Sombra neon discreta nos cards */
 .dynamic-shadow {
     transition: box-shadow 0.3s ease;
 }
 
 .movie-card:hover .dynamic-shadow {
-    box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
+    box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25);
 }
 
-/* Cores de Fundo Personalizadas (Usa \ antes de caracteres especiais no CSS) */
-body, .bg-\[\#040108\] { 
-    background-color: #040108 !important; 
-}
-.bg-\[\#040108\]\/90 { 
-    background-color: rgba(4, 1, 8, 0.9) !important; 
-}
-.bg-\[\#0c051a\]\/40 { 
-    background-color: rgba(12, 5, 26, 0.4) !important; 
-}
-.bg-\[\#0c051a\]\/80 { 
-    background-color: rgba(12, 5, 26, 0.8) !important; 
-}
-.bg-\[\#0c051a\] { 
-    background-color: #0c051a !important; 
-}
-.bg-purple-950 { 
-    background-color: #3b0764 !important; 
-}
-.bg-black\/40 { 
-    background-color: rgba(0, 0, 0, 0.4) !important; 
+/* ==========================================================================
+   6. FORMULÁRIO DE CONTACTO & FOOTER
+   ========================================================================== */
+.custom-input {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(59, 7, 100, 0.6) !important;
+    color: #fff !important;
 }
 
-/* Cores de Texto e Utilitários */
-.text-cyan-400 { color: #22d3ee !important; }
-.text-fuchsia-400 { color: #e879f9 !important; }
-.text-purple-200\/80 { color: rgba(edd, 233, 255, 0.8) !important; }
-.text-purple-300\/60 { color: rgba(216, 180, 254, 0.6) !important; }
-.text-purple-400\/40 { color: rgba(192, 132, 252, 0.4) !important; }
-.text-xs { font-size: 0.75rem !important; }
-.text-sm { font-size: 0.875rem !important; }
-.max-w-xl { max-width: 36rem; }
-.w-full { width: 100% !important; }
-
-/* Margens Interiores Suaves (Emulação do space-y-4 no Hero) */
-.space-y-4 > * + * {
-    margin-top: 1.5rem !important;
+.custom-input:focus {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-color: var(--cyan-neon) !important;
+    box-shadow: 0 0 0 0.25rem rgba(34, 211, 238, 0.15) !important;
 }
 
-/* Efeito Desfocado Premium no Menu (Backdrop Blur) */
-.backdrop-blur-md {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.custom-logo-footer {
+    opacity: 0.65;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease;
 }
 
-/* Gradiente de Cor no Título Principal */
-.bg-gradient-to-r {
-    background-size: 100%;
-    background-repeat: repeat;
-}
-.bg-clip-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-.from-fuchsia-500 {
-    background-image: linear-gradient(to right, #d946ef, #22d3ee);
-}
-
-/* Definições de Bordas Utilizadas */
-.border-purple-950\/30 { border-color: rgba(59, 7, 100, 0.3) !important; }
-.border-purple-950\/20 { border-color: rgba(59, 7, 100, 0.2) !important; }
-.border-purple-950\/40 { border-color: rgba(59, 7, 100, 0.4) !important; }
-.border-purple-950\/50 { border-color: rgba(59, 7, 100, 0.5) !important; }
-.border-purple-950\/60 { border-color: rgba(59, 7, 100, 0.6) !important; }
-.border-cyan-500\/30 { border-color: rgba(6, 182, 212, 0.3) !important; }
-
-/* Correção de Comportamento do Overlay do Catálogo */
-.movie-card {
-    position: relative;
-    overflow: hidden;
-}
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.custom-logo-footer:hover {
+    opacity: 1;
 }
