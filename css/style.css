@@ -87,3 +87,82 @@ article {
 .movie-card:hover .dynamic-shadow {
     box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
 }
+
+/* Cores de Fundo Personalizadas (Usa \ antes de caracteres especiais no CSS) */
+body, .bg-\[\#040108\] { 
+    background-color: #040108 !important; 
+}
+.bg-\[\#040108\]\/90 { 
+    background-color: rgba(4, 1, 8, 0.9) !important; 
+}
+.bg-\[\#0c051a\]\/40 { 
+    background-color: rgba(12, 5, 26, 0.4) !important; 
+}
+.bg-\[\#0c051a\]\/80 { 
+    background-color: rgba(12, 5, 26, 0.8) !important; 
+}
+.bg-\[\#0c051a\] { 
+    background-color: #0c051a !important; 
+}
+.bg-purple-950 { 
+    background-color: #3b0764 !important; 
+}
+.bg-black\/40 { 
+    background-color: rgba(0, 0, 0, 0.4) !important; 
+}
+
+/* Cores de Texto e Utilitários */
+.text-cyan-400 { color: #22d3ee !important; }
+.text-fuchsia-400 { color: #e879f9 !important; }
+.text-purple-200\/80 { color: rgba(edd, 233, 255, 0.8) !important; }
+.text-purple-300\/60 { color: rgba(216, 180, 254, 0.6) !important; }
+.text-purple-400\/40 { color: rgba(192, 132, 252, 0.4) !important; }
+.text-xs { font-size: 0.75rem !important; }
+.text-sm { font-size: 0.875rem !important; }
+.max-w-xl { max-width: 36rem; }
+.w-full { width: 100% !important; }
+
+/* Margens Interiores Suaves (Emulação do space-y-4 no Hero) */
+.space-y-4 > * + * {
+    margin-top: 1.5rem !important;
+}
+
+/* Efeito Desfocado Premium no Menu (Backdrop Blur) */
+.backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradiente de Cor no Título Principal */
+.bg-gradient-to-r {
+    background-size: 100%;
+    background-repeat: repeat;
+}
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.from-fuchsia-500 {
+    background-image: linear-gradient(to right, #d946ef, #22d3ee);
+}
+
+/* Definições de Bordas Utilizadas */
+.border-purple-950\/30 { border-color: rgba(59, 7, 100, 0.3) !important; }
+.border-purple-950\/20 { border-color: rgba(59, 7, 100, 0.2) !important; }
+.border-purple-950\/40 { border-color: rgba(59, 7, 100, 0.4) !important; }
+.border-purple-950\/50 { border-color: rgba(59, 7, 100, 0.5) !important; }
+.border-purple-950\/60 { border-color: rgba(59, 7, 100, 0.6) !important; }
+.border-cyan-500\/30 { border-color: rgba(6, 182, 212, 0.3) !important; }
+
+/* Correção de Comportamento do Overlay do Catálogo */
+.movie-card {
+    position: relative;
+    overflow: hidden;
+}
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
